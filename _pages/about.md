@@ -10,18 +10,42 @@ redirect_from:
 <section class="research-intro" aria-labelledby="introduction-heading">
   <h1 id="introduction-heading">Research Scientist in Audio and Multimodal Learning</h1>
 
-  I am a Ph.D. student in Electronic Engineering at Tsinghua University, supervised by Prof. Pingyi Fan. My research focuses on universal representation learning for audio, vibration, and multimodal industrial signals, with particular interests in foundation models and anomaly detection.
+  <p class="research-summary">I am a Ph.D. student in Electronic Engineering at Tsinghua University, supervised by Prof. Pingyi Fan. My research focuses on universal representation learning for audio, vibration, and multimodal industrial signals, with particular interests in foundation models and anomaly detection.</p>
 
   <p class="research-opportunity">I expect to graduate in 2027 and am seeking full-time Research Scientist opportunities, particularly in speech and audio foundation models.</p>
 </section>
 
 <section id="research-interests" class="research-interests" aria-labelledby="research-interests-heading">
   <h2 id="research-interests-heading">Research Interests</h2>
+  <ul>
+    <li>Speech and audio foundation models</li>
+    <li>Universal representation learning</li>
+    <li>Multimodal industrial signals</li>
+    <li>Anomalous sound detection</li>
+  </ul>
+</section>
 
-  - Speech and audio foundation models
-  - Universal representation learning
-  - Multimodal industrial signals
-  - Anomalous sound detection
+<section id="education" class="research-section" aria-labelledby="education-heading">
+  <h2 id="education-heading">Education</h2>
+
+  <div class="research-entry">
+    <div class="research-entry__heading"><strong>Tsinghua University</strong><span>2022–Present</span></div>
+    <p>Ph.D. student in Electronic Engineering · Expected graduation in 2027 · Supervisor: Prof. Pingyi Fan</p>
+  </div>
+
+  <div class="research-entry">
+    <div class="research-entry__heading"><strong>Tsinghua University</strong><span>2018–2022</span></div>
+    <p>B.S. in Electronic Engineering</p>
+  </div>
+</section>
+
+<section id="challenges" class="research-section" aria-labelledby="challenges-heading">
+  <h2 id="challenges-heading">Challenges</h2>
+  <ul>
+    <li><strong>DCASE 2024 Task 2:</strong> machine anomalous sound detection — first- and second-place systems.</li>
+    <li><strong>ICME 2024 ASC Grand Challenge:</strong> acoustic scene classification in urban cities — second- and third-place systems.</li>
+    <li><strong>DCASE 2023 Task 2:</strong> machine anomalous sound detection — second- and third-place systems.</li>
+  </ul>
 </section>
 
 <section id="publications" aria-labelledby="publications-heading">
@@ -33,14 +57,34 @@ redirect_from:
   {% endfor %}
 </section>
 
-<section id="highlights" class="research-highlights" aria-labelledby="highlights-heading">
-  <h2 id="highlights-heading">Highlights</h2>
+<section id="internships" class="research-section" aria-labelledby="internships-heading">
+  <h2 id="internships-heading">Internships</h2>
 
-  - **Education:** Ph.D. student in Electronic Engineering, Tsinghua University, 2022–present; expected graduation in 2027.
-  - **Education:** B.S. in Electronic Engineering, Tsinghua University, 2018–2022.
-  - **Award:** IIEP Research Scholarship, 2026.
-  - **Award:** DCASE 2024 Challenge Judges' Award.
-  - **Challenge:** DCASE 2024 Task 2 — first- and second-place systems.
-  - **Challenge:** ICME 2024 ASC Grand Challenge — second- and third-place systems.
-  - **Challenge:** DCASE 2023 Task 2 — second- and third-place systems.
+  <div class="research-entry">
+    <div class="research-entry__heading"><strong>Huakong AI Plus</strong><span>Nov. 2023–Present</span></div>
+    <p>Signal processing for real-world machines · Beijing, China</p>
+  </div>
+
+  <div class="research-entry">
+    <div class="research-entry__heading"><strong>Tencent CDG</strong><span>Jul.–Aug. 2024</span></div>
+    <p>Large language models for recommendation · Shenzhen, China</p>
+  </div>
+
+  <div class="research-entry">
+    <div class="research-entry__heading"><strong>Tencent CSIG</strong><span>Jun.–Nov. 2023</span></div>
+    <p>Target-speaker automatic speech recognition · Beijing, China</p>
+  </div>
+
+  <div class="research-entry">
+    <div class="research-entry__heading"><strong>Baidu Paddle</strong><span>Jun.–Oct. 2021</span></div>
+    <p>Model survey and tutorials for PaddleHub · Beijing, China</p>
+  </div>
+</section>
+
+<section id="awards" class="research-section research-awards" aria-labelledby="awards-heading">
+  <h2 id="awards-heading">Awards</h2>
+  <ul>
+    <li><strong>IIEP Research Scholarship</strong>, IIEP, March 2026.</li>
+    <li><strong>DCASE 2024 Challenge Judges' Award</strong>, October 2024.</li>
+  </ul>
 </section>

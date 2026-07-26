@@ -4,4 +4,5 @@ main:
 
   - title: "CV"
     url: /files/cv.pdf
-    requires_file: /files/cv.pdf
+    download: true
+    class: "masthead__cv-link"
