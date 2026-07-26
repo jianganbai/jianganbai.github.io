@@ -10,7 +10,7 @@ redirect_from:
 <section class="research-intro" aria-labelledby="introduction-heading">
   <h1 id="introduction-heading">Background</h1>
 
-  <p class="research-summary">I am currently a Ph.D. student at the Department of Electronic Engineering of Tsinghua University, supervised by Prof. Pingyi Fan (WISTLAB) and co-advised by Prof. Jia Liu and Prof. Wei-Qiang Zhang (SATLAB). Prior to that, I received my Bachelor's degree in Electronic Engineering from Tsinghua University in 2022.
+  <p class="research-summary">I am currently a Ph.D. student at the Department of Electronic Engineering of Tsinghua University, supervised by Prof. Pingyi Fan (WISTLAB) and co-advised by Prof. Jia Liu and Prof. Wei-Qiang Zhang (SATLAB). Prior to that, I received my Bachelor's degree in Electronic Engineering from Tsinghua University in 2022.</p>
   
   <p class="research-summary">My research focuses on universal representation of multimodal industrial signals (mostly audio and vibration), and downstream anomaly detection. We want to perceive the world through hearing. Our goal is not just publications, but more importantly, to see technology truly put into practice and to contribute to a better world.</p>
 
@@ -22,8 +22,7 @@ redirect_from:
 
   <div class="research-entry">
     <div class="research-entry__heading"><strong>Tsinghua University</strong><span>2022–Present</span></div>
-    <p>Ph.D. student in Electronic Engineering · Expected to graduate in June, 2027 </p>
-    <p>Supervisor: Prof. Pingyi Fan. Co-advised by Prof. Jia Liu and Prof. Wei-Qiang Zhang</p>
+    <p>Ph.D. student in Electronic Engineering. Expected to graduate in June, 2027.<br>Supervisor: Prof. Pingyi Fan. Co-advised by Prof. Jia Liu and Prof. Wei-Qiang Zhang</p>
   </div>
 
   <div class="research-entry">

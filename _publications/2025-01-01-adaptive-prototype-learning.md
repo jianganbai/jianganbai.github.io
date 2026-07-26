@@ -7,7 +7,9 @@ date: 2025-01-01
 venue: "ICASSP 2025"
 selected: true
 authors: "<strong>Anbai Jiang</strong>, Xinhu Zheng, Bing Han, Yihong Qiu, Pingyi Fan, Wei-Qiang Zhang, et al."
-summary: "PUBLICATION SUMMARY PLACEHOLDER — Replace this text with 2–3 sentences describing the problem, method, and principal result."
+summary: "This paper uses multiple learnable sub-centers for coarse labels and synthetic oversampling to better handle domain shifts, producing more discriminative normal-sound prototypes. Evaluated on DCASE 2024 Task 2, it achieved a 65.01% overall score and surpassed the challenge-winning system on the evaluation set."
+image: "images/publications/apl_asd.png"
+image_alt: "Demonstration of Adaptive Prototypes"
 image_width: "34%"
 links:
   - label: "Paper"

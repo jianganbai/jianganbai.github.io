@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Anbai Jiang"
 title_separator          : "-"
 name                     : &name "Anbai Jiang"
-description              : &description "Anbai Jiang — research in speech, audio foundation models, multimodal industrial signals, and anomaly detection."
+description              : &description "Personal Website of Anbai Jiang"
 url                      : "https://jianganbai.github.io" # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -23,7 +23,7 @@ repository               : "jianganbai/jianganbai.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   avatar           : "bio-jab.png"
-  name             : "Anbai Jiang"
+  name             : "Anbai Jiang（姜安柏）"
   bio              : "Ph.D. student at Tsinghua University"
   location         : "Beijing, China"
   employer         : "Tsinghua University"
