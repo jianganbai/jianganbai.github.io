@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 <section class="research-intro" aria-labelledby="introduction-heading">
-  <h1 id="introduction-heading">Background</h1>
+  <h1 id="introduction-heading">Profile</h1>
 
   <p class="research-summary">I am currently a Ph.D. student at the Department of Electronic Engineering of Tsinghua University, supervised by Prof. Pingyi Fan (WISTLAB) and co-advised by Prof. Jia Liu and Prof. Wei-Qiang Zhang (SATLAB). Prior to that, I received my Bachelor's degree in Electronic Engineering from Tsinghua University in 2022.</p>
   
