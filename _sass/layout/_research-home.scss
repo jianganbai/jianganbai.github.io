@@ -15,10 +15,6 @@ $research-intro-gap: 1.25rem;
   font-weight: 600;
 }
 
-.research-interests {
-  margin-bottom: 2rem;
-}
-
 .research-section {
   margin-bottom: 2rem;
 }
@@ -91,15 +87,17 @@ $research-intro-gap: 1.25rem;
 }
 
 .publication-card__authors,
-.publication-card__venue,
 .publication-card__summary,
 .publication-card__links {
   margin: 0 0 0.6rem;
 }
 
-.publication-card__authors,
-.publication-card__venue {
+.publication-card__authors {
   font-size: $type-size-6;
+}
+
+.publication-card__venue {
+  white-space: nowrap;
 }
 
 .publication-card__links a {

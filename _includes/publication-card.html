@@ -13,9 +13,8 @@
   </div>
 
   <div class="publication-card__body">
-    <h3 class="publication-card__title">{{ publication.title }}</h3>
+    <h3 class="publication-card__title"><span class="publication-card__venue">[{{ publication.venue }}]</span> {{ publication.title }}</h3>
     <p class="publication-card__authors">{{ publication.authors }}</p>
-    <p class="publication-card__venue"><strong>{{ publication.venue }}</strong> · {{ publication.date | date: "%Y" }}</p>
     <p class="publication-card__summary">{{ publication.summary }}</p>
 
     {% if publication.links %}

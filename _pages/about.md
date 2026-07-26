@@ -8,21 +8,13 @@ redirect_from:
 ---
 
 <section class="research-intro" aria-labelledby="introduction-heading">
-  <h1 id="introduction-heading">Research Scientist in Audio and Multimodal Learning</h1>
+  <h1 id="introduction-heading">Background</h1>
 
-  <p class="research-summary">I am a Ph.D. student in Electronic Engineering at Tsinghua University, supervised by Prof. Pingyi Fan. My research focuses on universal representation learning for audio, vibration, and multimodal industrial signals, with particular interests in foundation models and anomaly detection.</p>
+  <p class="research-summary">I am currently a Ph.D. student at the Department of Electronic Engineering of Tsinghua University, supervised by Prof. Pingyi Fan (WISTLAB) and co-advised by Prof. Jia Liu and Prof. Wei-Qiang Zhang (SATLAB). Prior to that, I received my Bachelor's degree in Electronic Engineering from Tsinghua University in 2022.
+  
+  <p class="research-summary">My research focuses on universal representation of multimodal industrial signals (mostly audio and vibration), and downstream anomaly detection. We want to perceive the world through hearing. Our goal is not just publications, but more importantly, to see technology truly put into practice and to contribute to a better world.</p>
 
-  <p class="research-opportunity">I expect to graduate in 2027 and am seeking full-time Research Scientist opportunities, particularly in speech and audio foundation models.</p>
-</section>
-
-<section id="research-interests" class="research-interests" aria-labelledby="research-interests-heading">
-  <h2 id="research-interests-heading">Research Interests</h2>
-  <ul>
-    <li>Speech and audio foundation models</li>
-    <li>Universal representation learning</li>
-    <li>Multimodal industrial signals</li>
-    <li>Anomalous sound detection</li>
-  </ul>
+  <p class="research-opportunity">I expect to graduate in June, 2027. I am seeking full-time job in industries, particularly in speech and audio foundation models. Feel free to reach out to me for small talks if you are interested.</p>
 </section>
 
 <section id="education" class="research-section" aria-labelledby="education-heading">
@@ -30,7 +22,8 @@ redirect_from:
 
   <div class="research-entry">
     <div class="research-entry__heading"><strong>Tsinghua University</strong><span>2022–Present</span></div>
-    <p>Ph.D. student in Electronic Engineering · Expected graduation in 2027 · Supervisor: Prof. Pingyi Fan</p>
+    <p>Ph.D. student in Electronic Engineering · Expected to graduate in June, 2027 </p>
+    <p>Supervisor: Prof. Pingyi Fan. Co-advised by Prof. Jia Liu and Prof. Wei-Qiang Zhang</p>
   </div>
 
   <div class="research-entry">
