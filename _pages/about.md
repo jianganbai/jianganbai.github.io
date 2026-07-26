@@ -22,7 +22,7 @@ redirect_from:
 
   <div class="research-entry">
     <div class="research-entry__heading"><strong>Tsinghua University</strong><span>2022–Present</span></div>
-    <p>Ph.D. student in Electronic Engineering. Expected to graduate in June, 2027.<br>Supervisor: Prof. Pingyi Fan. Co-advised by Prof. Jia Liu and Prof. Wei-Qiang Zhang</p>
+    <p>Ph.D. student in Electronic Engineering. Expected to graduate in June, 2027.<br>Supervisor: Prof. Pingyi Fan. Co-advised by Prof. Jia Liu and Prof. Wei-Qiang Zhang.</p>
   </div>
 
   <div class="research-entry">
