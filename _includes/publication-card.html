@@ -1,0 +1,29 @@
+{% include base_path %}
+{% assign publication = include.publication %}
+
+<article class="publication-card" style="--publication-image-width: {{ publication.image_width | default: '34%' }};">
+  <div class="publication-card__media">
+    {% if publication.image %}
+      <img src="{{ publication.image | prepend: '/images/' | prepend: base_path }}" alt="{{ publication.image_alt | default: publication.title | escape }}">
+    {% else %}
+      <div class="publication-card__placeholder" role="img" aria-label="Image placeholder for {{ publication.title | escape }}">
+        <span>Publication image</span>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="publication-card__body">
+    <h3 class="publication-card__title">{{ publication.title }}</h3>
+    <p class="publication-card__authors">{{ publication.authors }}</p>
+    <p class="publication-card__venue"><strong>{{ publication.venue }}</strong> · {{ publication.date | date: "%Y" }}</p>
+    <p class="publication-card__summary">{{ publication.summary }}</p>
+
+    {% if publication.links %}
+      <p class="publication-card__links">
+        {% for item in publication.links %}
+          <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>{% unless forloop.last %}<span aria-hidden="true"> · </span>{% endunless %}
+        {% endfor %}
+      </p>
+    {% endif %}
+  </div>
+</article>

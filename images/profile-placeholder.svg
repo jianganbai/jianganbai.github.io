@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" role="img" aria-labelledby="title desc">
+  <title id="title">Portrait placeholder</title>
+  <desc id="desc">Replace this file or update the avatar path when a portrait is available.</desc>
+  <rect width="320" height="320" fill="#eef2f5"/>
+  <circle cx="160" cy="124" r="58" fill="#c7d1da"/>
+  <path d="M62 294c9-69 47-106 98-106s89 37 98 106" fill="#c7d1da"/>
+  <text x="160" y="306" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#52616d">Portrait placeholder</text>
+</svg>

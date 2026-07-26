@@ -36,6 +36,12 @@
       {% if author.email %}
         <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
       {% endif %}
+      {% if author.cv %}
+        {% assign cv_file = site.static_files | where: "path", author.cv | first %}
+        {% if cv_file %}
+          <li><a href="{{ author.cv | prepend: base_path }}"><i class="fas fa-fw fa-file-pdf icon-pad-right" aria-hidden="true"></i>CV</a></li>
+        {% endif %}
+      {% endif %}
 
       <!-- Font Awesome and Academicons icons / Academic websites -->
       {% if author.academia %}
