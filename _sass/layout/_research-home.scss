@@ -132,8 +132,8 @@ $research-intro-gap: 1.25rem;
 .publication-list-item {
   display: grid;
   gap: 0.4rem;
-  margin-bottom: 1.4rem;
-  padding-bottom: 1.4rem;
+  margin: 0;
+  padding: 1.25rem 0;
   border-bottom: 1px solid var(--global-border-color);
 
   @include breakpoint($small) {
@@ -166,11 +166,6 @@ $research-intro-gap: 1.25rem;
 }
 
 .publication-list-item__authors {
-  font-size: $type-size-6;
-}
-.publication-index__note {
-  margin-top: -1rem;
-  color: var(--global-text-color-light);
   font-size: $type-size-6;
 }
 .publication-card__authors strong,

@@ -28,7 +28,6 @@ author_profile: true
 </section>
 <section class="publication-index" aria-labelledby="technical-reports-heading">
   <h2 id="technical-reports-heading">Technical Reports</h2>
-  <p class="publication-index__note">DCASE technical reports; not peer-reviewed.</p>
   {% for publication in technical_reports %}
     {% include publication-list-item.html publication=publication %}
   {% else %}
