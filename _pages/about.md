@@ -31,6 +31,15 @@ redirect_from:
   </div>
 </section>
 
+<section id="publications" aria-labelledby="publications-heading">
+  <h2 id="publications-heading">Selected Publications</h2>
+
+  {% assign selected_publications = site.publications | where: "selected", true | sort: "date" | reverse %}
+  {% for publication in selected_publications %}
+    {% include publication-card.html publication=publication %}
+  {% endfor %}
+</section>
+
 <section id="challenges" class="research-section" aria-labelledby="challenges-heading">
   <h2 id="challenges-heading">Challenges</h2>
   <ul>
@@ -40,13 +49,12 @@ redirect_from:
   </ul>
 </section>
 
-<section id="publications" aria-labelledby="publications-heading">
-  <h2 id="publications-heading">Selected Publications</h2>
-
-  {% assign selected_publications = site.publications | where: "selected", true | sort: "date" | reverse %}
-  {% for publication in selected_publications %}
-    {% include publication-card.html publication=publication %}
-  {% endfor %}
+<section id="services" class="research-section" aria-labelledby="services-heading">
+  <h2 id="services-heading">Professional Service</h2>
+  <ul>
+    <li><strong>Conference reviewer:</strong> ICASSP, Interspeech, SLT, NCMMSC.</li>
+    <li><strong>Journal reviewer:</strong> TASLP, TCCN.</li>
+  </ul>
 </section>
 
 <section id="internships" class="research-section" aria-labelledby="internships-heading">
