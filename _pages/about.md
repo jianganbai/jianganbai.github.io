@@ -50,7 +50,7 @@ redirect_from:
 </section>
 
 <section id="services" class="research-section" aria-labelledby="services-heading">
-  <h2 id="services-heading">Professional Service</h2>
+  <h2 id="services-heading">Services</h2>
   <ul>
     <li><strong>Conference reviewer:</strong> ICASSP, Interspeech, SLT, NCMMSC.</li>
     <li><strong>Journal reviewer:</strong> TASLP, TCCN.</li>
