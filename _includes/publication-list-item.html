@@ -1,0 +1,19 @@
+{% assign publication = include.publication %}
+
+<article class="publication-list-item">
+  <div class="publication-list-item__meta">
+    <span class="publication-list-item__venue">{{ publication.venue }}</span>
+    <time datetime="{{ publication.date | date_to_xmlschema }}">{{ publication.date | date: "%Y" }}</time>
+  </div>
+  <div class="publication-list-item__body">
+    <h3 class="publication-list-item__title">{{ publication.title }}</h3>
+    <p class="publication-list-item__authors">{{ publication.authors }}</p>
+    {% if publication.links %}
+      <p class="publication-list-item__links">
+        {% for item in publication.links %}
+          <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>{% unless forloop.last %}<span aria-hidden="true"> · </span>{% endunless %}
+        {% endfor %}
+      </p>
+    {% endif %}
+  </div>
+</article>

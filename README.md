@@ -41,11 +41,16 @@ Add another list item inside the corresponding `<ul>` element:
 
 Each selected publication has its own Markdown file under [`_publications/`](_publications):
 
-- [`2026-01-01-fisher.md`](_publications/2026-01-01-fisher.md)
-- [`2025-01-01-adaptive-prototype-learning.md`](_publications/2025-01-01-adaptive-prototype-learning.md)
-- [`2024-12-01-coopasd.md`](_publications/2024-12-01-coopasd.md)
-- [`2024-09-01-anopatch.md`](_publications/2024-09-01-anopatch.md)
-- [`2023-01-01-aegan-ad.md`](_publications/2023-01-01-aegan-ad.md)
+- [`2026-05-01-fisher.md`](_publications/2026-05-01-fisher.md)
+- [`2025-10-01-adaptive-prototype-learning.md`](_publications/2025-10-01-adaptive-prototype-learning.md)
+- [`2024-05-01-coopasd.md`](_publications/2024-05-01-coopasd.md)
+- [`2024-03-01-anopatch.md`](_publications/2024-03-01-anopatch.md)
+- [`2023-10-01-aegan-ad.md`](_publications/2023-10-01-aegan-ad.md)
+
+The website has two publication views:
+
+- The Home page shows records with `selected: true` as image-rich selected-publication cards.
+- [`/publications/`](/publications/) shows every record in a compact, reverse-chronological list. It separates records into three groups using `publication_group`.
 
 Important fields in each file:
 
@@ -66,6 +71,8 @@ image_width: "34%"
 - `image` is relative to the [`images/`](images) directory.
 - `image_width` controls the figure column. For example, use `"28%"` for more text space or `"40%"` for a larger figure.
 - If `image` is omitted, the website displays a labeled placeholder instead of a broken image.
+- `selected: true` adds the record to the Selected Publications preview on Home. Use `selected: false` (or omit it) for a record that should appear only on the full Publications page.
+- `publication_group: lead` places a record under **First Author / Supervisor-as-the-First-Author Publications**. Use `publication_group: other` for **Other Publications**, or `publication_group: technical_report` for **Technical Reports**. Technical Reports are reserved for DCASE reports and are not peer-reviewed. Every publication record must use one of these three values.
 
 Publication links use this format:
 
@@ -77,12 +84,15 @@ links:
     url: "https://..."
 ```
 
-To add a publication, copy an existing publication file, give it a unique filename and `permalink`, update its metadata, and retain:
+To add a publication, copy an existing publication file, give it a unique filename and `permalink`, update its metadata, and choose its group:
 
 ```yaml
 collection: publications
-selected: true
+selected: false
+publication_group: other
 ```
+
+Set `selected: true` instead when the new record should also appear in the Home-page preview. The full Publications page automatically includes `lead`, `other`, and `technical_report` records; you do not need to edit the page itself.
 
 The shared layout for all publication cards is [`_includes/publication-card.html`](_includes/publication-card.html). Edit this include only when changing every publication's structure.
 

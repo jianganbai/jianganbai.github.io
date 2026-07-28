@@ -28,5 +28,6 @@ superpowers/
 .codex
 
 # Test
+test/
 *.pyc
 valid*.py
