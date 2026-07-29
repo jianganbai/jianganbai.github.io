@@ -62,7 +62,7 @@ redirect_from:
 
   <div class="research-entry">
     <div class="research-entry__heading"><strong>Huakong AI Plus</strong><span>Nov. 2023–Present</span></div>
-    <p>Signal processing for real-world machines · Beijing, China</p>
+    <p>Core member. Spearheaded the industrialization of R&D AI signal processing. · Beijing, China</p>
   </div>
 
   <div class="research-entry">
