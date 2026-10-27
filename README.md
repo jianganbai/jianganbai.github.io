@@ -6,12 +6,13 @@ This repository contains Anbai Jiang's academic website, built with the Academic
 
 The homepage content is stored in [`_pages/about.md`](_pages/about.md). Its sections currently appear in this order:
 
-1. Introduction
+1. Profile
 2. Education
-3. Challenges
-4. Selected Publications
-5. Internships
-6. Awards
+3. Selected Publications
+4. Challenges
+5. Services
+6. Internships
+7. Awards
 
 To reorder the homepage, move an entire block from its opening `<section ...>` tag through its matching `</section>` tag.
 
@@ -29,7 +30,7 @@ Copy and edit this structure inside the appropriate section:
 </div>
 ```
 
-### Adding a Challenge or Award
+### Adding a Challenge, Service, or Award
 
 Add another list item inside the corresponding `<ul>` element:
 
@@ -39,7 +40,7 @@ Add another list item inside the corresponding `<ul>` element:
 
 ## Editing Publications
 
-Each selected publication has its own Markdown file under [`_publications/`](_publications):
+Each publication has its own Markdown file under [`_publications/`](_publications). The current selected publications are:
 
 - [`2026-05-01-fisher.md`](_publications/2026-05-01-fisher.md)
 - [`2025-10-01-adaptive-prototype-learning.md`](_publications/2025-10-01-adaptive-prototype-learning.md)
@@ -50,7 +51,7 @@ Each selected publication has its own Markdown file under [`_publications/`](_pu
 The website has two publication views:
 
 - The Home page shows records with `selected: true` as image-rich selected-publication cards.
-- [`/publications/`](/publications/) shows every record in a compact, reverse-chronological list. It separates records into three groups using `publication_group`.
+- [`/publications/`](https://jianganbai.github.io/publications/) shows records in three groups using `publication_group`, with reverse-chronological ordering within each group.
 
 Important fields in each file:
 
@@ -58,23 +59,24 @@ Important fields in each file:
 title: "Paper title"
 date: 2026-01-01
 venue: "IEEE TII"
-authors: "Author list"
+authors: "First Author, <strong>Anbai Jiang</strong>, Other Author"
 summary: "Two or three sentences describing the paper"
 image: "publications/fisher.png"
 image_alt: "Description of the figure"
 image_width: "34%"
 ```
 
-- `date` controls reverse-chronological ordering.
-- `venue` is displayed before the title, such as `[IEEE TII] Paper Title`.
-- `summary` controls the description beside the figure.
+- `date` in the front matter controls reverse-chronological ordering; the filename does not determine the displayed year or ordering.
+- `venue` is displayed before the title on Home, such as `[IEEE TII] Paper Title`. The full Publications page displays the venue and year in a separate metadata column.
+- `authors` supports inline HTML. Use `<strong>Anbai Jiang</strong>` to preserve the site's author highlighting.
+- `summary` controls the description beside the figure on Home.
 - `image` is relative to the [`images/`](images) directory.
 - `image_width` controls the figure column. For example, use `"28%"` for more text space or `"40%"` for a larger figure.
 - If `image` is omitted, the website displays a labeled placeholder instead of a broken image.
 - `selected: true` adds the record to the Selected Publications preview on Home. Use `selected: false` (or omit it) for a record that should appear only on the full Publications page.
 - `publication_group: lead` places a record under **First Author / Supervisor-as-the-First-Author Publications**. Use `publication_group: other` for **Other Publications**, or `publication_group: technical_report` for **Technical Reports**. Technical Reports are reserved for DCASE reports and are not peer-reviewed. Every publication record must use one of these three values.
 
-Publication links use this format:
+Publication links on the Home-page cards use this format. The compact entries on the full Publications page currently show the title, authors, venue, and year without per-paper links or images:
 
 ```yaml
 links:
@@ -94,7 +96,7 @@ publication_group: other
 
 Set `selected: true` instead when the new record should also appear in the Home-page preview. The full Publications page automatically includes `lead`, `other`, and `technical_report` records; you do not need to edit the page itself.
 
-The shared layout for all publication cards is [`_includes/publication-card.html`](_includes/publication-card.html). Edit this include only when changing every publication's structure.
+The Home-page card structure is in [`_includes/publication-card.html`](_includes/publication-card.html). The compact entries on the full Publications page use [`_includes/publication-list-item.html`](_includes/publication-list-item.html). Edit the relevant include when changing the shared structure rather than an individual record.
 
 ## Editing the Sidebar and Contact Details
 
@@ -102,8 +104,8 @@ Update the `author` block in [`_config.yml`](_config.yml):
 
 ```yaml
 author:
-  avatar: "profile-placeholder.svg"
-  name: "Anbai Jiang"
+  avatar: "bio-jab.png"
+  name: "Anbai Jiang（姜安柏）"
   bio: "Ph.D. student at Tsinghua University"
   location: "Beijing, China"
   employer: "Tsinghua University"
@@ -113,7 +115,7 @@ author:
   cv: "/files/cv.pdf"
 ```
 
-Place the portrait file under [`images/`](images), then set `avatar` to its filename. Preserve YAML indentation when editing `_config.yml`.
+Place the portrait file under [`images/`](images), then set `avatar` to its filename. Preserve YAML indentation and UTF-8 encoding when editing `_config.yml`. Restart the local Jekyll server after changing this file; configuration changes are not automatically reloaded.
 
 ## Navigation and CV
 
@@ -133,9 +135,11 @@ https://jianganbai.github.io/files/cv.pdf
 
 The top-bar CV button links to this file. The sidebar CV link appears when the PDF exists during the Jekyll build.
 
+The scripts under [`scripts/`](scripts) for Markdown-to-JSON CV conversion are inherited template utilities. Their expected input, `_pages/cv.md`, is not present; they are not part of the current PDF CV workflow.
+
 ## Visual Tuning
 
-Homepage-specific styling is in [`_sass/layout/_research-home.scss`](_sass/layout/_research-home.scss).
+Homepage and publication-view styling is in [`_sass/layout/_research-home.scss`](_sass/layout/_research-home.scss), imported by [`assets/css/main.scss`](assets/css/main.scss). Jekyll compiles the SCSS; edit the source rather than generated files under `_site/`.
 
 ### Introduction Spacing
 
@@ -161,14 +165,65 @@ The main content's right gutter is controlled in [`_sass/layout/_page.scss`](_sa
 @include suffix(0.5 of 12);
 ```
 
-Increase `$x-large` for a wider site. Reduce the suffix toward `0` to give the main content more horizontal space.
+Increase `$x-large` for a wider site. This variable also controls the wide-desktop breakpoint, including the fixed sidebar and the change from a 3/9-column sidebar/content layout to 2/10 columns. Review [`_sass/layout/_sidebar.scss`](_sass/layout/_sidebar.scss) and `_page.scss` together when changing it. Reduce the suffix toward `0` to give the main content more horizontal space.
+
+Check both Home and Publications at mobile, intermediate desktop, and wide-desktop widths, in light and dark themes. Confirm that the sidebar, navigation, publication figures, and footer do not overlap content.
+
+## JavaScript Changes
+
+Edit [`assets/js/_main.js`](assets/js/_main.js), [`assets/js/theme.js`](assets/js/theme.js), or the relevant plugin source. When JavaScript changes, install the npm dependencies and regenerate the tracked bundle:
+
+```sh
+npm install
+npm run build:js
+```
+
+Commit the resulting `assets/js/main.min.js` with the source changes. Node/npm are needed for rebuilding JavaScript, not for ordinary content or SCSS edits.
+
+## Local Preview and Build
+
+Use Ruby 3.2, matching the existing build workflow and Docker image, with Bundler installed. From the repository root:
+
+```sh
+bundle install
+bundle exec jekyll serve
+```
+
+Open `http://localhost:4000/` to preview the site. To check a production build in PowerShell:
+
+```powershell
+$env:JEKYLL_ENV = "production"
+bundle exec jekyll build --strict_front_matter
+```
+
+For subsequent development previews, use a new terminal or set `$env:JEKYLL_ENV = "development"` before starting the server. The build output is written to `_site/`, which is ignored by Git.
+
+Alternatively, with Docker and Docker Compose installed:
+
+```sh
+docker compose up --build
+```
+
+The Compose configuration serves the site on port 4000 using `_config.yml` and `_config_docker.yml`.
 
 ## Validation and Deployment
 
-Before pushing changes, run the source-level checks:
+Two source-level layout checks are tracked in the repository. In PowerShell, run the relevant checks when changing the footer or sidebar/page layout:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File test/footer-layout.test.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File test/sidebar-layout.test.ps1
+```
+
+The following additional checks may be present in an existing local workspace:
 
 ```powershell
 python scripts\validate_personal_site.py
+powershell -NoProfile -ExecutionPolicy Bypass -File test/publication-index.test.ps1
 ```
 
-After committing and pushing, GitHub Pages rebuilds the website. Inspect the deployed site and confirm that the layout, links, images, and CV download work as expected.
+These two additional files are ignored by [`.gitignore`](.gitignore) and are not tracked, so a fresh clone will not contain them. They are optional local checks, not a reproducible repository-wide validation step. Some assertions hard-code publication counts, selected papers, or exact style values; review their expectations when intentionally changing that content or design. Source checks do not replace a Jekyll build and browser inspection.
+
+The existing [Jekyll build workflow](.github/workflows/jekyll-build.yml) runs a production build after the `Cleanup bad PR` workflow completes, with a `main` branch filter. It contains no Pages deployment step and is not a general build-on-push workflow. The branch filter should be checked against the branch in use rather than assumed to cover it.
+
+The site is hosted through GitHub Pages. Check the repository's **Settings → Pages** for the configured publishing branch/folder or Actions source before relying on a push to publish changes; those settings are not recorded in these files. After publication, inspect the deployed Home and Publications pages and confirm that navigation, images, theme switching, contact links, and the CV download work as expected.
