@@ -155,6 +155,30 @@ $(document).ready(function () {
   // Enable the theme toggle
   $('#theme-toggle').on('click', toggleTheme);
 
+  // Native details provides keyboard activation; close the desktop CV disclosure
+  // when leaving it, following a link, or pressing Escape.
+  const cvMenu = document.querySelector('.cv-menu');
+  if (cvMenu) {
+    const isDesktopCV = () => !cvMenu.closest('.hidden-links');
+    document.addEventListener('click', function (event) {
+      if (isDesktopCV() && (!cvMenu.contains(event.target) || event.target.closest('a'))) {
+        cvMenu.open = false;
+      }
+    });
+    document.addEventListener('focusin', function (event) {
+      if (isDesktopCV() && !cvMenu.contains(event.target)) {
+        cvMenu.open = false;
+      }
+    });
+    cvMenu.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && isDesktopCV() && cvMenu.open) {
+        cvMenu.open = false;
+        cvMenu.querySelector('summary').focus();
+        event.stopPropagation();
+      }
+    });
+  }
+
   // Enable the sticky footer
   var bumpIt = function () {
     $("body").css("padding-bottom", "0");

@@ -112,7 +112,6 @@ author:
   email: "jab22@mails.tsinghua.edu.cn"
   googlescholar: "https://scholar.google.com/citations?user=w68g1qkAAAAJ&hl=en"
   github: "jianganbai"
-  cv: "/files/cv.pdf"
 ```
 
 Place the portrait file under [`images/`](images), then set `avatar` to its filename. Preserve YAML indentation and UTF-8 encoding when editing `_config.yml`. Restart the local Jekyll server after changing this file; configuration changes are not automatically reloaded.
@@ -121,19 +120,23 @@ Place the portrait file under [`images/`](images), then set `avatar` to its file
 
 The top navigation is configured in [`_data/navigation.yml`](_data/navigation.yml).
 
-Compile the CV as a PDF and save it exactly as:
+The CV language versions are configured in [`_data/cv.yml`](_data/cv.yml), shared by the top navigation and sidebar. Replace the PDFs at these paths when updating the CV:
 
 ```text
-files/cv.pdf
+files/cv_en.pdf
+files/cv_zh.pdf
 ```
 
-The deployed download address will be:
+Their deployed addresses are:
 
 ```text
-https://jianganbai.github.io/files/cv.pdf
+https://jianganbai.github.io/files/cv_en.pdf
+https://jianganbai.github.io/files/cv_zh.pdf
 ```
 
-The top-bar CV button links to this file. The sidebar CV link appears when the PDF exists during the Jekyll build.
+On desktop, the top-bar **CV ▾** button opens a language menu with **English PDF** and **中文 PDF**. When CV moves into the collapsed navigation, both language links are shown directly. The sidebar displays **CV: English · 中文**. All CV links open the chosen PDF in a new tab, where visitors can read or download it. Only files present during the Jekyll build are linked.
+
+The top navigation uses `type: cv` to render [`_includes/cv-menu.html`](_includes/cv-menu.html). The language labels, `lang` codes, and paths belong in `_data/cv.yml`, rather than separate copies in the navigation and author configuration. There is no fallback or redirect for the retired single-PDF address.
 
 The scripts under [`scripts/`](scripts) for Markdown-to-JSON CV conversion are inherited template utilities. Their expected input, `_pages/cv.md`, is not present; they are not part of the current PDF CV workflow.
 

@@ -1,0 +1,20 @@
+{% capture cv_menu_items %}
+  {% for cv in site.data.cv %}
+    {% assign cv_file = site.static_files | where: "path", cv.url | first %}
+    {% if cv_file %}
+      <li><a href="{{ cv.url | prepend: base_path }}" lang="{{ cv.lang }}" hreflang="{{ cv.lang }}" target="_blank" rel="noopener noreferrer">{{ cv.label }} <span class="cv-menu__format">PDF</span></a></li>
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+{% assign cv_menu_items = cv_menu_items | strip %}
+{% if cv_menu_items != empty %}
+  <li class="masthead__menu-item masthead__cv">
+    <details class="cv-menu">
+      <summary class="masthead__cv-link">CV <span class="cv-menu__chevron" aria-hidden="true">▾</span></summary>
+      <span class="cv-menu__heading">CV</span>
+      <ul class="cv-menu__links" aria-label="CV language versions">
+        {{ cv_menu_items }}
+      </ul>
+    </details>
+  </li>
+{% endif %}

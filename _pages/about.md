@@ -84,6 +84,7 @@ redirect_from:
 <section id="awards" class="research-section research-awards" aria-labelledby="awards-heading">
   <h2 id="awards-heading">Awards</h2>
   <ul>
+    <li><strong>IET Engineers in Society Awards - Digital Futures</strong>, IET, October 2026.</li>
     <li><strong>IIEP Research Scholarship</strong>, IIEP, March 2026.</li>
     <li><strong>DCASE 2024 Challenge Judges' Award</strong>, October 2024.</li>
   </ul>

@@ -22,7 +22,8 @@
 | 网站身份、作者信息、头像、主题选择 | `_config.yml` |
 | 导航、CV 按钮 | `_data/navigation.yml`、`_includes/masthead.html` |
 | 侧栏信息和联系链接的结构 | `_includes/author-profile.html` |
-| CV PDF | `files/cv.pdf` |
+| CV 语言、文件路径及菜单 | `_data/cv.yml`、`_includes/cv-menu.html` |
+| 中英文 CV PDF | `files/cv_zh.pdf`、`files/cv_en.pdf` |
 | 头像与论文图 | `images/`、`images/publications/` |
 | 首页、论文卡片、论文列表的样式 | `_sass/layout/_research-home.scss` |
 | 宽度、断点、全局变量 | `_sass/_themes.scss` |
@@ -38,8 +39,10 @@
 - 首页由 Markdown 文件中的 HTML section 和 Liquid 组成，目前依次为 Profile、Education、Selected Publications、Challenges、Services、Internships、Awards。
 - 移动章节时移动完整的 `<section>...</section>`，保留有效的 HTML、唯一的 `id` 及匹配的 `aria-labelledby`。
 - 首页地址为 `/`，保留 `/about/` 和 `/about.html` 的重定向；完整论文页为 `/publications/`。除非任务要求迁移地址，否则保留这些公开路径和已有论文 permalink。
-- 导航目前包含 Home、Publications 和 CV。顶部 CV 按钮直接指向 `/files/cv.pdf`；侧栏 CV 链接仅在构建时能找到该文件时出现。
-- 更新 CV 时替换 `files/cv.pdf`，确认 PDF 可打开、下载链接可访问。`scripts/update_cv_json.sh` 和 `cv_markdown_to_json.py` 是模板遗留工具，所需的 `_pages/cv.md` 当前不存在，不属于 PDF CV 更新流程。
+- 导航目前包含 Home、Publications 和 CV。CV 项通过 `type: cv` 渲染语言菜单：桌面点击 `CV ▾` 展开选项，移入折叠菜单后直接显示两种语言链接；侧栏显示 `CV: English · 中文`。链接在新标签页打开 PDF，且只显示构建时存在的文件。
+- 两处 CV 入口共用 `_data/cv.yml` 的标签、语言和文件路径。更新 CV 时替换 `files/cv_en.pdf`、`files/cv_zh.pdf`，确认 PDF 可打开、链接可访问。用户明确不保留旧单文件地址的兼容性，不要恢复旧地址或重定向。
+- 桌面 CV 使用原生 `details/summary`，点击外部、焦点离开或按 Esc 收起。修改导航时同时验证 overflow 搬移和键盘操作，避免手机端出现两层菜单。
+- `scripts/update_cv_json.sh` 和 `cv_markdown_to_json.py` 是模板遗留工具，所需的 `_pages/cv.md` 当前不存在，不属于 PDF CV 更新流程。
 - 修改 `_config.yml` 后重启本地 Jekyll 服务。保存文本时使用 UTF-8，保留 YAML 缩进及文件头部的 front matter。
 
 ### 论文

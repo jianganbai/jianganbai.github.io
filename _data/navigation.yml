@@ -6,6 +6,4 @@ main:
     url: /publications/
 
   - title: "CV"
-    url: /files/cv.pdf
-    download: true
-    class: "masthead__cv-link"
+    type: cv

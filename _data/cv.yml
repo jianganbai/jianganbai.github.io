@@ -1,0 +1,7 @@
+- label: "English"
+  lang: "en"
+  url: "/files/cv_en.pdf"
+
+- label: "中文"
+  lang: "zh"
+  url: "/files/cv_zh.pdf"

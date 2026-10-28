@@ -6,7 +6,7 @@
 */
 
 var $nav = $('#site-nav');
-var $btn = $('#site-nav button');
+var $btn = $('#site-nav > .greedy-nav__toggle');
 var $vlinks = $('#site-nav .visible-links');
 var $vlinks_persist_tail = $vlinks.children("*.persist.tail");
 var $hlinks = $('#site-nav .hidden-links');
@@ -51,12 +51,18 @@ function updateNav() {
     if (breaks.length < 1) {
       $btn.addClass('hidden');
       $btn.removeClass('close');
+      $btn.attr('aria-expanded', 'false');
       $hlinks.addClass('hidden');
     }
   }
 
   // Keep counter updated
   $btn.attr("count", breaks.length);
+
+  // Overflow navigation shows the CV languages directly, without a nested disclosure.
+  $nav.find('.cv-menu').each(function () {
+    this.open = $(this).closest('.hidden-links').length > 0;
+  });
 
   // update masthead height and the body/sidebar top padding
   var mastheadHeight = $('.masthead').height();
@@ -81,6 +87,14 @@ screen.orientation.addEventListener("change", function () {
 $btn.on('click', function () {
   $hlinks.toggleClass('hidden');
   $(this).toggleClass('close');
+  $(this).attr('aria-expanded', !$hlinks.hasClass('hidden'));
+});
+
+$nav.on('keydown', function (event) {
+  if (event.key === 'Escape' && !$hlinks.hasClass('hidden')) {
+    $hlinks.addClass('hidden');
+    $btn.removeClass('close').attr('aria-expanded', 'false').trigger('focus');
+  }
 });
 
 updateNav();
